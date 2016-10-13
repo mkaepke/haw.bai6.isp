@@ -41,4 +41,5 @@ tante(X,Y) :- weiblich(X), kind(Y,V,M), (schwester(X,V); schwester(M,X)). % X is
 neffe(X,Y) :- maennlich(X), (onkel(Y,X); tante(Y,X)). % X ist Neffe von Y
 nichte(X,Y) :- weiblich(X), (onkel(Y,X); tante(Y,X)). % X ist Nichte von Y
 
-stiefmutter(X,Y) :- vater(V,Y), verheiratet(V,X), not(mutter(X,Y)). % X ist Stiefmutter von Y
+stiefmutter(X,Y) :-  \+(mutter(X,Y)), vater(V,Y), verheiratet(V,X). % X ist Stiefmutter von Y
+% wenn \+ (entspricht not) vorne steht (+ Anfrage enthaelt Variable), evaluiert Prolog immer zu false  
