@@ -2,21 +2,10 @@
 Was ergibt 2 + 1?
 ?- add(succ(succ(0)),succ(0),Y). 
 Y = succ(succ(succ(0))).
-
-Was ergibt X + 1 = 2?
-?- add(X,succ(0),succ(succ(0))). 
-X = succ(0)
 */
 
-add(0,Y,Y). % Abbruch, da 0 + Y = Y ergibt true
-/*
-?- add(0,succ(0),succ(0)).
-true
 
-?- add(0,succ(0),succ(succ(0))).
-false
-*/
-
+add(0,Y,Y). % "Abbruch", da 0 + Y = Y ergibt true
 add(succ(X),Y,succ(Z)) :- add(X,Y,Z).
 
 
