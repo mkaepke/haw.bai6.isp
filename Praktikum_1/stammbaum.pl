@@ -41,4 +41,4 @@ tante(X,Y) :- weiblich(X), kind(Y,V,M), (schwester(X,V); schwester(M,X)). % X is
 neffe(X,Y) :- maennlich(X), (onkel(Y,X); tante(Y,X)). % X ist Neffe von Y
 nichte(X,Y) :- weiblich(X), (onkel(Y,X); tante(Y,X)). % X ist Nichte von Y
 
-stiefmutter(X,Y) :- verheiratet(V,X), vater(V,Y), not(mutter(X,Y)). % X ist Stiefmutter von Y
+stiefmutter(X,Y) :- vater(V,Y), verheiratet(V,X), not(mutter(X,Y)). % X ist Stiefmutter von Y
