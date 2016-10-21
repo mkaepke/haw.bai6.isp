@@ -1,3 +1,6 @@
+% import
+:- consult(readsentence).
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Fakten
 maennlich(karl).
